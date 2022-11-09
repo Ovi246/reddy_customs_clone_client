@@ -5,7 +5,7 @@
 body {
   font-size: 1em;
   line-height: 1.65;
-  color: rgba(255,255,255,0.5);
+  color: white;
   background-color: #272727;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
