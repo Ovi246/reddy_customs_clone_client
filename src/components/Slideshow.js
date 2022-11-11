@@ -83,7 +83,7 @@ export default function Slideshow() {
                       We Love Modifying Vehicle
                     </p>
 
-                    <Button px={8} py={2} text="CUSTOMIZE WITH US"></Button>
+                    <Button px={10} py={2} text="CUSTOMIZE WITH US"></Button>
                   </div>
                 </div>
               </SwiperSlide>

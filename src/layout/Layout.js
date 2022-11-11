@@ -5,11 +5,15 @@ import Navbar from "./../components/Navbar";
 
 const Layout = () => {
   return (
-    <div className="container mx-auto">
+    <>
       <Navbar />
-      <Outlet />
-      <Footer />
-    </div>
+      <div className="container">
+        <div className="">
+          <Outlet />
+          <Footer />
+        </div>
+      </div>
+    </>
   );
 };
 
