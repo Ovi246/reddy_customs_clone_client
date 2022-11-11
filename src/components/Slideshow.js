@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,9 +11,12 @@ import { Autoplay, Navigation } from "swiper";
 
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { Outlet } from "react-router-dom";
+import { motion } from "framer-motion";
+import AnimatedTitle from "../utils/AnimatedTitle";
+import Button from "./Button";
 
 export default function Slideshow() {
-  const sliderRef = useRef(null);
+  const sliderRef = useRef();
 
   const slideShowData = [
     { src: "https://i.ibb.co/SBB0rqm/slide1.jpg", title: "BLOOD BULL" },
@@ -55,7 +58,7 @@ export default function Slideshow() {
         </div>
       </div>
       <Swiper
-        effect="cube"
+        effect="fade"
         spaceBetween={30}
         autoplay={{
           delay: 2500,
@@ -66,24 +69,21 @@ export default function Slideshow() {
         ref={sliderRef}
       >
         <div className="w-full h-screen">
-          {slideShowData.map((item) => (
-            <div key={item.title}>
+          {slideShowData.map((item, idx) => (
+            <div key={idx}>
               <SwiperSlide>
                 <img src={item.src} alt="" className="object-fill" />
                 <div className="absolute top-1/3 right-[10%]">
                   <div className="flex flex-col justify-end gap-5">
-                    <h1 className="text-5xl font-normal tracking-[.32em] mb-6">
+                    <AnimatedTitle title={item.title} />
+                    {/* <h1 className="text-5xl font-normal tracking-[.32em] mb-6">
                       {item.title}
-                    </h1>
+                    </h1> */}
                     <p className="text-[16px] text-end font-normal my-5">
                       We Love Modifying Vehicle
                     </p>
-                    <div className="flex justify-end items-center">
-                      <button className="px-8 py-2 bg-[#c5a47e] hover:bg-gray-800 transition-all ease-in-out rounded-full mt-5">
-                        CUSTOMIZE WITH US
-                        <AiOutlineArrowRight className="inline ml-2" />
-                      </button>
-                    </div>
+
+                    <Button px={8} py={2} text="CUSTOMIZE WITH US"></Button>
                   </div>
                 </div>
               </SwiperSlide>
