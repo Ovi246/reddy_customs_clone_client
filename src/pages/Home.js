@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </div>
       <div className="mt-28 mx-96">
-        <div className="container mx-auto">
+        <div className="container mx-auto border-l-2 border-white border-r-2">
           <Services />
         </div>
       </div>
